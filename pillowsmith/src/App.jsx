@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Matrix from './Matrix.jsx'
 import Nav from './Nav.jsx';
+import MostPopular from './MostPopular.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,16 +21,19 @@ function App() {
 
         {/* <a href="https://www.amazon.com/AIKOFUL-Siberian-Sleeping-Original-Egyptian/dp/B07VSZ51CV?th=1&linkCode=ll1&tag=pillowsmith-20&linkId=a48505c709c3201112cb64f60bda822b&language=en_US&ref_=as_li_ss_tl">Pillow Link</a> */}
       </div>
-      <div className = "grid grid-cols-12 gap-4 mt-10">
-        <article className="grid gap-4 col-span-12 lg:col-span-8">
+      <div>
+        {/* <article className="grid gap-4 col-span-12 lg:col-span-8">
           <div>
             <h2><b>Your Custom Pillow Matrix</b></h2>
             <div>
                 <Matrix />
             </div>
           </div>
-        </article>
-
+        </article> */}
+        <div>
+            <MostPopular />
+        </div>
+        <br />
         <nav className="sidebar grid gap-4 col-span-12 lg:col-span-4">
             <ul className="text-left">
                 <h3><b>Looking for a different metric?</b></h3>
