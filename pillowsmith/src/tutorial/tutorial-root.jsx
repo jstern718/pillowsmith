@@ -1,4 +1,5 @@
 import { Outlet,
+        Link,
         NavLink,
         useLoaderData,
         Form,
@@ -7,14 +8,8 @@ import { Outlet,
         useSubmit,
     } from "react-router-dom";
 import { getPages, createPage } from "../pages";
-import pillowsmithImage from "../assets/Pillowsmith.jpg";
 
 import { useEffect } from "react";
-import NavLinkWithColor from "../NavLinkWithColor";
-import Nav from "../Nav";
-
-let OurRecommendations = {};
-const pageArray = [OurRecommendations]
 
 export async function action() {
     const page = await createPage();
@@ -46,6 +41,7 @@ export default function Root() {
     return (
       <>
         <div id="sidebar">
+          <h1>React Router Pages</h1>
           <div>
             <Form id="search-form" role="search">
               <input
@@ -73,52 +69,44 @@ export default function Root() {
                 aria-live="polite"
               ></div>
             </Form>
+            <Form method="post">
+                <button type="submit">New</button>
+            </Form>
           </div>
           <nav>
+            {pages.length ? (
                 <ul>
-                    <li key="OurRecommendations" className="hide1">
-                        <NavLink
-                        to={`pages/our-recommendations`}
-                        className={({isActive, isPending }) =>
-                        isActive
-                            ? "active"
-                            : isPending
-                            ? "pending"
-                            : ""
-                        }
-                        >
-                            Our Recommendations
-                        </NavLink>
+                {pages.map((page) => (
+                    <li key={page.id}>
+                    <NavLink
+                    to={`pages/${page.id}`}
+                    className={({ isActive, isPending }) =>
+                      isActive
+                        ? "active"
+                        : isPending
+                        ? "pending"
+                        : ""
+                    }
+                    >
+                        <Link to={`pages/${page.id}`}>
+                            {page.first || page.last ? (
+                            <>
+                                {page.first} {page.last}
+                            </>
+                            ) : (
+                            <i>No Name</i>
+                            )}{" "}
+                            {page.favorite && <span>★</span>}
+                        </Link>
+                    </NavLink>
                     </li>
-                    <li key="BestPillowcases" className="hide1">
-                        <NavLink
-                        to={`pages/best-pillowcases`}
-                        className={({ isActive, isPending }) =>
-                        isActive
-                            ? "active"
-                            : isPending
-                            ? "pending"
-                            : ""
-                        }
-                        >
-                            Best Pillowcases
-                        </NavLink>
-                    </li>
-                    <li key="MostPopular" className="hide1">
-                        <NavLink
-                        to={`pages/most-popular`}
-                        className={({ isActive, isPending }) =>
-                        isActive
-                            ? "active"
-                            : isPending
-                            ? "pending"
-                            : ""
-                        }
-                        >
-                            Most Popular
-                        </NavLink>
-                    </li>
+                ))}
                 </ul>
+            ) : (
+                <p>
+                <i>No pages</i>
+                </p>
+            )}
           </nav>
         </div>
         <div
@@ -127,7 +115,6 @@ export default function Root() {
                 navigation.state === "loading" ? "loading" : ""
             }
         >
-            <Nav />
             <Outlet />
         </div>
       </>

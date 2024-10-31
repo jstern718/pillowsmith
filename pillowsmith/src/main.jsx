@@ -11,18 +11,23 @@ import Root, { loader as rootLoader,
               action as rootAction
          } from "./routes/root.jsx"
 import ErrorPage from "./error-page";
-import Contact, {
-    loader as contactLoader,
-    action as contactAction,
-} from "./routes/contact";
+import Page, {
+    loader as pageLoader,
+    action as pageAction,
+} from "./routes/page";
 
-import EditContact, {
+import EditPage, {
     action as editAction,
 } from "./routes/edit";
 
 import { action as destroyAction } from "./routes/destroy";
 
 import Index from "./routes/index";
+
+import OurRecommendations from "./pages/OurRecommendations";
+import BestPillowcases from "./pages/BestPillowcases";
+import MostPopular from "./pages/MostPopular";
+import Blog from "./pages/Blog";
 
 // import App from './App.jsx'
 
@@ -39,25 +44,35 @@ const router = createBrowserRouter([
           children: [
             { index: true, element: <Index /> },
             {
-                path: "contacts/:contactId",
-                element: <Contact />,
-                loader: contactLoader,
-                action: contactAction,
+                path: "pages/most-popular",
+                element: <MostPopular />,
             },
             {
-                path: "contacts/:contactId",
-                element: <Contact />,
-                loader: contactLoader,
-                action: contactAction,
+                path: "pages/our-recommendations",
+                element: <OurRecommendations />,
             },
             {
-                path: "contacts/:contactId/edit",
-                element: <EditContact />,
-                loader: contactLoader,
+                path: "pages/best-pillowcases",
+                element: <BestPillowcases />,
+            },
+            {
+                path: "pages/blog",
+                element: <Blog />,
+            },
+            {
+                path: "pages/:pageId",
+                element: <Page />,
+                loader: pageLoader,
+                action: pageAction,
+            },
+            {
+                path: "pages/:pageId/edit",
+                element: <EditPage />,
+                loader: pageLoader,
                 action: editAction,
             },
             {
-                path: "contacts/:contactId/destroy",
+                path: "pages/:pageId/destroy",
                 action: destroyAction,
                 errorElement: <div>Oops! There was an error.</div>,
             },

@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import './App.css';
 
-function Pillow({ name, num, link, description }) {
+function BlogPost({ name, num, link, description }) {
 
 return (
     <>
@@ -25,5 +24,5 @@ return (
 )
 }
 
-export default Pillow
+export default BlogPost
 

@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Matrix from './Matrix.jsx'
 import Nav from './Nav.jsx';
-import MostPopular from './MostPopular.jsx';
+import MostPopular from './pages/MostPopular.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
