@@ -7,7 +7,7 @@ import { Outlet,
         useSubmit,
     } from "react-router-dom";
 import { getPages, createPage } from "../pages";
-import pillowsmithImage from "../assets/Pillowsmith.jpg";
+import pillowsmithImage from "../assets/Pillowsmith.png"
 
 import { useEffect } from "react";
 import NavLinkWithColor from "../NavLinkWithColor";
@@ -46,7 +46,7 @@ export default function Root() {
     return (
       <>
         <div id="sidebar">
-          <div>
+          <div className="form-div">
             <Form id="search-form" role="search">
               <input
                 id="q"
@@ -75,7 +75,35 @@ export default function Root() {
             </Form>
           </div>
           <nav>
+                <div className="hamburger-holder">
+                    <div className="HAMBURGER-ICON space-y-2"
+                            onClick={() => setIsNavOpen((prev) => !prev)}>
+                        <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                        <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                        <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                    </div>
+                </div>
+                <div className="image-div">
+                    <img src={pillowsmithImage} alt="pillowsmith image" className="cat-image"/>
+                </div>
+
+
+
                 <ul>
+                    <li key="Home" className="hide1">
+                        <NavLink
+                        to={`/`}
+                        className={({isActive, isPending }) =>
+                        isActive
+                            ? "active"
+                            : isPending
+                            ? "pending"
+                            : ""
+                        }
+                        >
+                            Home
+                        </NavLink>
+                    </li>
                     <li key="OurRecommendations" className="hide1">
                         <NavLink
                         to={`pages/our-recommendations`}
@@ -118,6 +146,20 @@ export default function Root() {
                             Most Popular
                         </NavLink>
                     </li>
+                    <li key="Blog" className="hide1">
+                        <NavLink
+                        to={`pages/blog`}
+                        className={({isActive, isPending }) =>
+                        isActive
+                            ? "active"
+                            : isPending
+                            ? "pending"
+                            : ""
+                        }
+                        >
+                            Blog
+                        </NavLink>
+                    </li>
                 </ul>
           </nav>
         </div>
@@ -127,7 +169,6 @@ export default function Root() {
                 navigation.state === "loading" ? "loading" : ""
             }
         >
-            <Nav />
             <Outlet />
         </div>
       </>

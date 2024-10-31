@@ -7,7 +7,7 @@ export default function Nav() {
 
   return (
     <>
-        <div className="flex items-center justify-between pb-6 -mt-3">
+        {/* <div className="flex items-center justify-between pb-6 -mt-3">
             <nav>
                 <section className="MOBILE-MENU flex md:hidden">
                   <div className="flex bg-gray-200 -ml-10 pl-5 pr-20 border-solid border-1 border-gray-300 shadow-lg shadow-gray-600/65">
@@ -75,7 +75,7 @@ export default function Nav() {
                 justify-content: space-evenly;
                 align-items: center;
             }
-        `}</style>
+        `}</style> */}
     </>
   );
 }

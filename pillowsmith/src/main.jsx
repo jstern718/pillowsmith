@@ -28,6 +28,7 @@ import OurRecommendations from "./pages/OurRecommendations";
 import BestPillowcases from "./pages/BestPillowcases";
 import MostPopular from "./pages/MostPopular";
 import Blog from "./pages/Blog";
+import Home from "./pages/Home";
 
 // import App from './App.jsx'
 
@@ -60,21 +61,12 @@ const router = createBrowserRouter([
                 element: <Blog />,
             },
             {
-                path: "pages/:pageId",
-                element: <Page />,
-                loader: pageLoader,
-                action: pageAction,
+                path: "pages/most-popular",
+                element: <MostPopular />,
             },
             {
-                path: "pages/:pageId/edit",
-                element: <EditPage />,
-                loader: pageLoader,
-                action: editAction,
-            },
-            {
-                path: "pages/:pageId/destroy",
-                action: destroyAction,
-                errorElement: <div>Oops! There was an error.</div>,
+                path: "/",
+                element: <Home />,
             },
           ],
         },
