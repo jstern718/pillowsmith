@@ -2,6 +2,7 @@ import { useState } from 'react';
 import '../App.css';
 import Pillow from '../Pillow.jsx';
 import Accordion from '../accordion.jsx';
+import catImage from "/Users/jstern/rithm/me/pillowsmith/pillowsmith/src/assets/Pillowsmith.jpg";
 
 function Home() {
   const [count, setCount] = useState(0)
