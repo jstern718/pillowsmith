@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../App.css';
 import QuestionItem from '../QuestionItem.jsx';
-import Accordion from '../accordion.jsx';
+import Accordion from '../Accordion.jsx';
 
 function Questions() {
   const [count, setCount] = useState(0)
