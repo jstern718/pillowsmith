@@ -63,10 +63,6 @@ const router = createBrowserRouter([
                 element: <Blog />,
             },
             {
-                path: "pages/most-popular",
-                element: <MostPopular />,
-            },
-            {
                 path: "pages/thin",
                 element: <Thin />,
             },

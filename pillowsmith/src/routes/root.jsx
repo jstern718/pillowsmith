@@ -12,6 +12,7 @@ import pillowsmithImage from "../assets/Pillowsmith.png"
 
 import React, { useEffect, useState } from "react";
 
+
 export async function action() {
     const page = await createPage();
     return redirect(`/pages/${page.id}/edit`);
