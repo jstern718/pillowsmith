@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../App.css';
 import HomeCard from '../HomeCard.jsx';
-import Accordion from '../accordion.jsx';
+import Accordion from '../Accordion.jsx';
 
 import catHeroWide from "../assets/hero4.jpeg";
 import fatPillow from "../assets/fat_pillow.jpg";
