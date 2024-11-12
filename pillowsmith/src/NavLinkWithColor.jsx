@@ -6,7 +6,6 @@ export default function NavLinkWithColor(props) {
     let address = props.address;
     let name = props.name;
 
-    console.log("log", name, address);
 
     return (
         <NavLink

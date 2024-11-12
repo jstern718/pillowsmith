@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 const Accordion = ({ props }) => {
 
   const { textA, textB, textC } = props;
-  console.log("Accordion", textA, textB, textC);
 
   const [isOpen, setIsOpen] = useState(false);
 

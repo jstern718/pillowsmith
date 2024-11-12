@@ -24,11 +24,13 @@ import { action as destroyAction } from "./routes/destroy";
 
 import Index from "./routes/index";
 
-import OurRecommendations from "./pages/OurRecommendations";
+import Questions from "./pages/Questions";
 import BestPillowcases from "./pages/BestPillowcases";
 import MostPopular from "./pages/MostPopular";
 import Blog from "./pages/Blog";
 import Home from "./pages/Home";
+import Thin from "./pages/Thin.jsx";
+import Cooling from "./pages/Cooling.jsx";
 
 // import App from './App.jsx'
 
@@ -49,8 +51,8 @@ const router = createBrowserRouter([
                 element: <MostPopular />,
             },
             {
-                path: "pages/our-recommendations",
-                element: <OurRecommendations />,
+                path: "pages/questions",
+                element: <Questions />,
             },
             {
                 path: "pages/best-pillowcases",
@@ -65,8 +67,20 @@ const router = createBrowserRouter([
                 element: <MostPopular />,
             },
             {
+                path: "pages/thin",
+                element: <Thin />,
+            },
+            {
+                path: "pages/cooling",
+                element: <Cooling />,
+            },
+            // {
+            //     path: "/",
+            //     element: <Home />,
+            // },
+            {
                 path: "/",
-                element: <Home />,
+                element: <MostPopular />,
             },
           ],
         },

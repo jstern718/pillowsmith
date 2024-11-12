@@ -1,4 +1,80 @@
-  @media only screen and (min-width: 768px) {
+    .photo1{
+        display: none;
+    }
+    .photo2{
+        display: none;
+    }
+
+
+    @media only screen and (width < 768px) {
+        .photo2{
+            display: none;
+        }
+        :root {
+            --divisor: 1.5;
+        }
+        .item-title{
+            font-size: medium;
+        }
+    }
+
+    @media only screen and (768px <= width <= 1100px) {
+        #sidebar {
+            width: 22rem;
+        }
+        #detail{
+            width: calc(100% - 22rem); /* Adjust width to account for sidebar */
+            margin-left: 22rem; /* Add left margin equal to sidebar width */
+        }
+        .photo2{
+            display: none;
+        }
+        :root {
+            --divisor: 1.5;
+        }
+        .item-title{
+            font-size: large;
+        }
+    }
+
+    @media only screen and (1101px <= width <= 1300px) {
+        #sidebar {
+            width: 27rem;
+        }
+        #detail{
+            width: calc(100% - 27rem); /* Adjust width to account for sidebar */
+            margin-left: 27rem; /* Add left margin equal to sidebar width */
+        }
+        .photo2{
+            display: none;
+        }
+        :root {
+            --divisor: 1.5;
+        }
+        .item-title{
+            font-size: large;
+        }
+    }
+
+    @media only screen and (1301px <= width) {
+        #sidebar {
+            width: 30rem;
+        }
+        #detail{
+            width: calc(100% - 30rem); /* Adjust width to account for sidebar */
+            margin-left: 30rem; /* Add left margin equal to sidebar width */
+        }
+        :root {
+            --divisor: 2.7;
+        }
+        .item-title{
+            font-size: x-large;
+        }
+    }
+
+
+
+    @media only screen and (min-width: 768px) {
 
         :root {
         font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -171,16 +247,23 @@
             display: flex;
             height: 100%;
             width: 100%;
+            margin: 0 auto;
+            padding: none;
+            text-align: center;
         }
 
         #sidebar {
-            width: 19rem;
             /* background-color: #f7f7f7; */
             background-color: #fcfcfc;
             border: solid 1px #e3e3e3;
             box-shadow: 5px 5px 5px #e3e3e3;
             display: flex;
             flex-direction: column;
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+
         }
 
         #sidebar > * {
@@ -198,17 +281,6 @@
             border-top: 1px solid #e3e3e3;
             order: 1;
             line-height: 1;
-        }
-
-        #sidebar::after {
-            content: "";
-            display: block;
-            width: 100%;
-            height: 130px; /* Adjust the height as needed */
-            background-image: url(/Users/jstern/rithm/me/pillowsmith/pillowsmith/src/assets/Pillowsmith.jpg);
-            background-size: cover;
-            background-position:center;
-            border: whitesmoke 6px solid;
         }
 
         #sidebar > div {
@@ -319,8 +391,9 @@
             flex: 1;
             padding-left: 2rem;
             padding-top: 2rem;
+            align-items: flex-self;
             padding-bottom: 2rem;
-            width: 100%;
+
         }
 
         #detail.loading {
@@ -454,7 +527,7 @@
         }
 
         .menu-div{
-            position: absolute;
+            /* position: absolute; */
             top: 80px;
             left: 10px;
             padding: 10px;
@@ -463,11 +536,24 @@
         .x-div{
             display: none;
         }
+
+        .card-div{
+            margin-right: 20px;
+        }
+
+        .divC{
+            margin-right: 20px;
+        }
     }
 
 
 
 @media only screen and (max-width: 767px) {
+
+    .hero-img{
+        display: none;
+    }
+
     #q{
         display: none;
     }
@@ -489,7 +575,6 @@
         height: 100%;
         width: 100%;
         margin: 0;
-
     }
 
     .hamburger-holder{
@@ -503,7 +588,6 @@
         }
 
     .HAMBURGER-ICON{
-       position:fixed;
        right: 85%;
     }
 
@@ -546,8 +630,6 @@
     .outlet-div{
         padding: 1.5rem;
     }
-
-
 
     :root {
         font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -829,6 +911,8 @@
         #detail {
             flex: 1;
             width: 100%;
+            display: flex;
+            flex-direction: row;
         }
 
         #detail.loading {
@@ -958,6 +1042,20 @@
             background-color: white;
         }
 
+        .card-div{
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        .divC{
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        .page-title{
+            text-align: center;
+        }
+
 }
 
   @tailwind base;
@@ -1015,3 +1113,14 @@ input{
     text-shadow: 1px 1px 1px gray;
 }
 
+
+/* ======== */
+
+.question-text{
+    font-size: xx-large;
+}
+
+.divA{
+    display: flex;
+    flex-direction: row;
+}

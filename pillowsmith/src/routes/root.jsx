@@ -9,6 +9,7 @@ import { Outlet,
 import { getPages, createPage } from "../pages";
 import pillowsmithImage from "../assets/Pillowsmith.png"
 
+
 import React, { useEffect, useState } from "react";
 import NavLinkWithColor from "../NavLinkWithColor";
 import Nav from "../Nav";
@@ -32,7 +33,6 @@ export default function Root() {
     const navigation = useNavigation();
     const submit = useSubmit();
     const [isNavOpen, setIsNavOpen] = useState(false);
-    console.log("isNavOpen", isNavOpen);
 
     const searching =
         navigation.location &&
@@ -119,13 +119,13 @@ export default function Root() {
                                     ? "pending"
                                     : ""
                                 }
-                                >
+                                reloadDocument>
                                     Home
                                 </NavLink>
                             </li>
-                            <li key="OurRecommendations" className="hide1">
+                            {/* <li key="Questions" className="hide1">
                                 <NavLink
-                                to={`pages/our-recommendations`}
+                                to={`pages/questions`}
                                 className={({isActive, isPending }) =>
                                 isActive
                                     ? "active"
@@ -133,8 +133,36 @@ export default function Root() {
                                     ? "pending"
                                     : ""
                                 }
-                                >
-                                    Our Recommendations
+                                reloadDocument>
+                                    Questions
+                                </NavLink>
+                            </li> */}
+                            <li key="MostPopular" className="hide1">
+                                <NavLink
+                                to={`pages/most-popular`}
+                                className={({ isActive, isPending }) =>
+                                isActive
+                                    ? "active"
+                                    : isPending
+                                    ? "pending"
+                                    : ""
+                                }
+                                reloadDocument>
+                                    Popular Pillows
+                                </NavLink>
+                            </li>
+                            <li key="Thin" className="hide1">
+                                <NavLink
+                                to={`pages/thin`}
+                                className={({ isActive, isPending }) =>
+                                isActive
+                                    ? "active"
+                                    : isPending
+                                    ? "pending"
+                                    : ""
+                                }
+                                reloadDocument>
+                                    Low Profile Pillows
                                 </NavLink>
                             </li>
                             <li key="BestPillowcases" className="hide1">
@@ -147,13 +175,13 @@ export default function Root() {
                                     ? "pending"
                                     : ""
                                 }
-                                >
-                                    Best Pillowcases
+                                reloadDocument>
+                                    Pillowcases
                                 </NavLink>
                             </li>
-                            <li key="MostPopular" className="hide1">
+                            {/* <li key="Cooling" className="hide1">
                                 <NavLink
-                                to={`pages/most-popular`}
+                                to={`pages/cooling`}
                                 className={({ isActive, isPending }) =>
                                 isActive
                                     ? "active"
@@ -161,11 +189,11 @@ export default function Root() {
                                     ? "pending"
                                     : ""
                                 }
-                                >
-                                    Most Popular
+                                reloadDocument>
+                                    Best Cooling Pillows
                                 </NavLink>
-                            </li>
-                            <li key="Blog" className="hide1">
+                            </li> */}
+                            {/* <li key="Blog" className="hide1">
                                 <NavLink
                                 to={`pages/blog`}
                                 className={({isActive, isPending }) =>
@@ -175,10 +203,10 @@ export default function Root() {
                                     ? "pending"
                                     : ""
                                 }
-                                >
+                                reloadDocument>
                                     Blog
                                 </NavLink>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>
