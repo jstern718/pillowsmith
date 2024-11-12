@@ -11,16 +11,6 @@ import Root, { loader as rootLoader,
               action as rootAction
          } from "./routes/root.jsx"
 import ErrorPage from "./error-page";
-import Page, {
-    loader as pageLoader,
-    action as pageAction,
-} from "./routes/page";
-
-import EditPage, {
-    action as editAction,
-} from "./routes/edit";
-
-import { action as destroyAction } from "./routes/destroy";
 
 import Index from "./routes/index";
 
@@ -70,13 +60,9 @@ const router = createBrowserRouter([
                 path: "pages/cooling",
                 element: <Cooling />,
             },
-            // {
-            //     path: "/",
-            //     element: <Home />,
-            // },
             {
                 path: "/",
-                element: <MostPopular />,
+                element: <Home />,
             },
           ],
         },
