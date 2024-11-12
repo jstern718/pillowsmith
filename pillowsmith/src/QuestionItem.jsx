@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import './App.css';
 
-function BlogPost({ name, num, link, description }) {
+function QuestionItem({ question, answer, num, link, name, description }) {
 
 return (
     <>
@@ -11,8 +12,10 @@ return (
                     </div>
                     <div className="flex flex-col items-stretch m-0 py-5 px-4 bg-white border-l border-gray-200 shadow-x dark:bg-gray-800 dark:border-gray-700 w-full rounded-r-md">
                             <button href={link}>
-                                    <h5 className="mb-4 text-lg font-semibold tracking-tighter text-gray-900 dark:text-white text-pretty text-balance">{name}</h5>
+                                    <h5 className="question-text mb-4 text font-semibold tracking-tighter text-gray-900 dark:text-white text-pretty text-balance text-start">{question}</h5>
                             </button>
+                            <p className="flex mb-5 font-normal text-gray-500 dark:text-gray-400 text-pretty text-start">{answer}</p>
+                            <p className="flex mb-5 font-normal text-gray-500 dark:text-gray-400 text-pretty text-start">{name}</p>
                             <p className="flex mb-5 font-normal text-gray-500 dark:text-gray-400 text-pretty text-start">{description}</p>
                             <div className="flex justify-center">
                                     <button href={link} className="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 w-56">Shop now at Amazon.com</button>
@@ -24,5 +27,5 @@ return (
 )
 }
 
-export default BlogPost
+export default QuestionItem
 

@@ -24,10 +24,13 @@ import { action as destroyAction } from "./routes/destroy";
 
 import Index from "./routes/index";
 
-import OurRecommendations from "./pages/OurRecommendations";
+import Questions from "./pages/Questions";
 import BestPillowcases from "./pages/BestPillowcases";
 import MostPopular from "./pages/MostPopular";
 import Blog from "./pages/Blog";
+import Home from "./pages/Home";
+import Thin from "./pages/Thin.jsx";
+import Cooling from "./pages/Cooling.jsx";
 
 // import App from './App.jsx'
 
@@ -48,8 +51,8 @@ const router = createBrowserRouter([
                 element: <MostPopular />,
             },
             {
-                path: "pages/our-recommendations",
-                element: <OurRecommendations />,
+                path: "pages/questions",
+                element: <Questions />,
             },
             {
                 path: "pages/best-pillowcases",
@@ -60,21 +63,24 @@ const router = createBrowserRouter([
                 element: <Blog />,
             },
             {
-                path: "pages/:pageId",
-                element: <Page />,
-                loader: pageLoader,
-                action: pageAction,
+                path: "pages/most-popular",
+                element: <MostPopular />,
             },
             {
-                path: "pages/:pageId/edit",
-                element: <EditPage />,
-                loader: pageLoader,
-                action: editAction,
+                path: "pages/thin",
+                element: <Thin />,
             },
             {
-                path: "pages/:pageId/destroy",
-                action: destroyAction,
-                errorElement: <div>Oops! There was an error.</div>,
+                path: "pages/cooling",
+                element: <Cooling />,
+            },
+            // {
+            //     path: "/",
+            //     element: <Home />,
+            // },
+            {
+                path: "/",
+                element: <MostPopular />,
             },
           ],
         },

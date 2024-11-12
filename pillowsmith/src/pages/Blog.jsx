@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import '../App.css';
 import BlogPost from './BlogPost';
 
 function Blog() {
 
-  let blogPosts = [
+  let blogPostContent = [
                     {title: "This pillow is a great deal",
                      contents: "It's comfortable and affordable and you will like it so you should consider buying it.",
                      link: "https://amzn.to/4ffX9wP"},
@@ -16,7 +16,7 @@ function Blog() {
         <article>
             <div className="w-full">
                 <ul className="space-y-4">
-                    {blogPost.map((post, index) => (
+                    {blogPostContent.map((post, index) => (
                             <li key={index} className="w-full">
                                 <BlogPost
                                     title={post.title}
