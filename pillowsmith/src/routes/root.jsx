@@ -11,10 +11,6 @@ import pillowsmithImage from "../assets/Pillowsmith.png"
 
 
 import React, { useEffect, useState } from "react";
-import NavLinkWithColor from "../NavLinkWithColor";
-import Nav from "../Nav";
-
-
 
 export async function action() {
     const page = await createPage();
