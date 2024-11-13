@@ -12,7 +12,7 @@ import Root, { loader as rootLoader,
          } from "./routes/root.jsx"
 import ErrorPage from "./error-page";
 
-import Index from "./routes/index";
+import Index from "./pages/index";
 
 import Questions from "./pages/Questions";
 import BestPillowcases from "./pages/BestPillowcases";
