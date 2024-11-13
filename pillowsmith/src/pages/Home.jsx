@@ -10,9 +10,9 @@ import pillowcasesImg from "../assets/pillowcases.jpg";
 function Home() {
 
   let pillowList = [
-        {title: "Popular Pillows", link: "/MostPopular.jsx", image: fatPillow},
-        {title: "Low Profile Pillows", link: "/Thin.jsx", image: thinPillow},
-        {title: "Pillowcases", link: "/BestPillowcases.jsx", image: pillowcasesImg}
+        {title: "Popular Pillows", link: "pages/most-popular", image: fatPillow},
+        {title: "Low Profile Pillows", link: "pages/thin", image: thinPillow},
+        {title: "Pillowcases", link: "pages/best-pillowcases", image: pillowcasesImg}
     ];
 
 
