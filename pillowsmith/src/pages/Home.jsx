@@ -11,7 +11,7 @@ function Home() {
 
   let pillowList = [
         {title: "Popular Pillows", link: "pages/most-popular", image: fatPillow},
-        {title: "Low Profile Pillows", link: "pages/thin", image: thinPillow},
+        {title: "Thin Pillows", link: "pages/thin", image: thinPillow},
         {title: "Pillowcases", link: "pages/best-pillowcases", image: pillowcasesImg}
     ];
 

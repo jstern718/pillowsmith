@@ -6,7 +6,7 @@ function HomeCard( props ) {
     console.log("HomeCard link: ", link);
     console.log("HomeCard CardTitle: ", title);
 
-    const base = "https://pillowsmith.onrender.com/pages";
+    const base = "https://pillowsmith.onrender.com";
     let newLink = base + link;
     console.log("newLink", newLink)
 
