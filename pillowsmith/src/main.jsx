@@ -22,16 +22,10 @@ import Home from "./pages/Home";
 import Thin from "./pages/Thin.jsx";
 import Cooling from "./pages/Cooling.jsx";
 
-let path;
-if ( import.meta.env.VITE_PATH ){
-    path = import.meta.env.VITE_PATH;
-}
-
-
 
 const router = createBrowserRouter([
     {
-      path: `${path}`,
+      path: "/",
       element: <Root />,
       loader: rootLoader,
       action: rootAction,
