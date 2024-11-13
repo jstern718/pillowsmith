@@ -25,7 +25,7 @@ import Cooling from "./pages/Cooling.jsx";
 
 const router = createBrowserRouter([
     {
-      path: "pillowsmith.render.com/",
+      path: "/",
       element: <Root />,
       loader: rootLoader,
       action: rootAction,
