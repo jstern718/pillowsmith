@@ -35,27 +35,27 @@ const router = createBrowserRouter([
           children: [
             { index: true, element: <Home /> },
             {
-                path: "pages/most-popular",
+                path: "/pages/most-popular",
                 element: <MostPopular />,
             },
             {
-                path: "pages/questions",
+                path: "/pages/questions",
                 element: <Questions />,
             },
             {
-                path: "pages/best-pillowcases",
+                path: "/pages/best-pillowcases",
                 element: <BestPillowcases />,
             },
             {
-                path: "pages/blog",
+                path: "/pages/blog",
                 element: <Blog />,
             },
             {
-                path: "pages/thin",
+                path: "/pages/thin",
                 element: <Thin />,
             },
             {
-                path: "pages/cooling",
+                path: "/pages/cooling",
                 element: <Cooling />,
             },
           ],
