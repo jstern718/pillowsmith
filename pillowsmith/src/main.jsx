@@ -26,9 +26,6 @@ let path;
 if ( import.meta.env.VITE_PATH ){
     path = import.meta.env.VITE_PATH;
 }
-else {
-    path = process.env.PATH;
-}
 
 
 
