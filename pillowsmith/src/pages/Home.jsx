@@ -1,23 +1,19 @@
-import { useState } from 'react';
+
 import '../App.css';
 import HomeCard from '../HomeCard.jsx';
-import Accordion from '../Accordion.jsx';
 
 import catHeroWide from "../assets/hero4.jpeg";
 import fatPillow from "../assets/fat_pillow.jpg";
 import thinPillow from "../assets/thin_pillow.jpg";
 import pillowcasesImg from "../assets/pillowcases.jpg";
 
-
 function Home() {
-  const [count, setCount] = useState(0)
 
   let pillowList = [
-        {title: "Popular Pillows", link: "../MostPopular.jsx", image: fatPillow},
-        {title: "Low Profile Pillows", link: "../Thin.jsx", image: thinPillow},
-        {title: "Pillowcases", link: "../BestPillowcases.jsx", image: pillowcasesImg}
+        {title: "Popular Pillows", link: "/MostPopular.jsx", image: fatPillow},
+        {title: "Low Profile Pillows", link: "/Thin.jsx", image: thinPillow},
+        {title: "Pillowcases", link: "/BestPillowcases.jsx", image: pillowcasesImg}
     ];
-    let cardNumber = pillowList.length;
 
 
 return (
