@@ -7,12 +7,11 @@ import {
   RouterProvider
 } from "react-router-dom";
 
-import Root, { loader as rootLoader,
+import Root from "./routes/root.jsx";
+import { loader as rootLoader,
               action as rootAction
-         } from "./routes/root.jsx"
+         } from "./utils-root.jsx";
 import ErrorPage from "./error-page";
-
-import Index from "./pages/index";
 
 import Questions from "./pages/Questions";
 import BestPillowcases from "./pages/BestPillowcases";

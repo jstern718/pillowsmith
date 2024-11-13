@@ -6,24 +6,10 @@ import { Outlet,
         useNavigation,
         useSubmit,
     } from "react-router-dom";
-import { getPages, createPage } from "../pages";
 import pillowsmithImage from "../assets/Pillowsmith.png"
 
 
 import React, { useEffect, useState } from "react";
-
-
-export async function action() {
-    const page = await createPage();
-    return redirect(`/pages/${page.id}/edit`);
-}
-
-export async function loader({request}) {
-    const url = new URL(request.url);
-    const q = url.searchParams.get("q");
-    const pages = await getPages(q);
-    return { pages, q };
-}
 
 export default function Root() {
     const { pages, q } = useLoaderData();
@@ -120,20 +106,6 @@ export default function Root() {
                                     Home
                                 </NavLink>
                             </li>
-                            {/* <li key="Questions" className="hide1">
-                                <NavLink
-                                to={`pages/questions`}
-                                className={({isActive, isPending }) =>
-                                isActive
-                                    ? "active"
-                                    : isPending
-                                    ? "pending"
-                                    : ""
-                                }
-                                reloadDocument>
-                                    Questions
-                                </NavLink>
-                            </li> */}
                             <li key="MostPopular" className="hide1">
                                 <NavLink
                                 to={`pages/most-popular`}
@@ -176,34 +148,6 @@ export default function Root() {
                                     Pillowcases
                                 </NavLink>
                             </li>
-                            {/* <li key="Cooling" className="hide1">
-                                <NavLink
-                                to={`pages/cooling`}
-                                className={({ isActive, isPending }) =>
-                                isActive
-                                    ? "active"
-                                    : isPending
-                                    ? "pending"
-                                    : ""
-                                }
-                                reloadDocument>
-                                    Best Cooling Pillows
-                                </NavLink>
-                            </li> */}
-                            {/* <li key="Blog" className="hide1">
-                                <NavLink
-                                to={`pages/blog`}
-                                className={({isActive, isPending }) =>
-                                isActive
-                                    ? "active"
-                                    : isPending
-                                    ? "pending"
-                                    : ""
-                                }
-                                reloadDocument>
-                                    Blog
-                                </NavLink>
-                            </li> */}
                         </ul>
                     </div>
                 </div>
