@@ -32,9 +32,8 @@ const router = createBrowserRouter([
       errorElement: <ErrorPage />,
       children: [
         {
-          errorElement: <ErrorPage />,
           children: [
-            { index: true, element: <Index /> },
+            { index: true, element: <Home /> },
             {
                 path: "pages/most-popular",
                 element: <MostPopular />,
@@ -58,10 +57,6 @@ const router = createBrowserRouter([
             {
                 path: "pages/cooling",
                 element: <Cooling />,
-            },
-            {
-                path: "/",
-                element: <Home />,
             },
           ],
         },
