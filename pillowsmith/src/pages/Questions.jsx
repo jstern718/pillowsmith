@@ -1,10 +1,8 @@
-import { useState } from 'react';
 import '../App.css';
 import QuestionItem from '../QuestionItem.jsx';
-import Accordion from '../Accordion.jsx';
+import TopOfPage from '../components/TopOfPage.jsx';
 
 function Questions() {
-  const [count, setCount] = useState(0)
 
   let pillowList = [
                     {question: "I like how my old worn out pillow feels, but I want to get something new.",
@@ -99,24 +97,16 @@ function Questions() {
                         link: "???"},
                     ];
 
-  let cardNumber = pillowList.length;
-
   let textA = "The most popular pillows on Amazon are all on the      fluffy/high side. They are best for people who like to sleep on their backs - Some side sleepers might like them, but only if they need a higher pillow.";
   let textB = "All of these pillows are popular because they offer a good deal and come in packs of two. If you prefer fluffy pillows, and/or you need to buy a lot of pillows while furnishing a new house, these will be a good option for you.";
   let textC = "If you aren't too concerned about price, see our list of the best fluffy pillows.";
-  let accordionText = {textA, textB, textC};
+  let accordionList = [textB, textC];
 
   return (
     <>
       <div className="outlet-div">
         <article>
-          <div className="w-full">
-            <h2 className="text-2xl font-bold mb-4 p-3 page-title">Questions & Advice</h2>
-            <div className="divC mt-0 mb-5 p-2 pb-1 bg-indigo-200 rounded-lg border-solid border-1 border-gray-300 shadow-lg shadow-gray-600/65">
-                <ul className="text-sm text-left m-3 ml-5 font-light list-disc">
-                    <Accordion props={accordionText}/>
-                </ul>
-            </div>
+            <TopOfPage textA={textA} accordionList={accordionList}/>
             <ul className="space-y-4">
                 {pillowList.map((pillow, index) => (
                         <li key={index} className="w-full">
@@ -131,7 +121,6 @@ function Questions() {
                         </li>
                 ))}
             </ul>
-          </div>
         </article>
       </div>
     </>

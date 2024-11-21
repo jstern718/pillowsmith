@@ -40,7 +40,7 @@ function Pillow({ intro, name, num, link, description, image }) {
                     <p className="text-left ml-4 mr-0 justify-self-center font-bold text-lg text-blue-800 underline">{num}</p>
                 </div>
                 <div className="m-4 border-l border-gray-200 shadow-x dark:bg-gray-800 dark:border-gray-700">
-                    <h3 className="mb-4 text-lg text-center font-semibold tracking-tighter text-indigo-400 dark:text-white text-pretty text-balance">{intro}:</h3>
+                    <h3 className="mb-4 px-16 text-md text-center font-semibold tracking-tighter text-indigo-400 dark:text-white text-pretty text-balance">{intro}:</h3>
                     <div className="flex items-center row p-2 photoArea">
 
                         <img src={image} alt="image" style={{ height: width, width: width}} className="ml-2 mr-2 photo1" />

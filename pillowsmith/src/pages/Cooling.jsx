@@ -1,54 +1,53 @@
-import { useState } from 'react';
+
 import '../App.css';
+
 import Pillow from '../Pillow.jsx';
-import Accordion from '../Accordion.jsx';
+import TopOfPage from '../components/TopOfPage.jsx';
 
 function Cooling() {
-  const [count, setCount] = useState(0)
 
   let pillowList = [
-                    {intro: "The Best Low Profile Pillow Out There",
-                     title: "DOWNLITE Flat & Soft Down Pillow",
-                     description: "Downlite is the n'est plus ultra of thin pillow brands. The Flat & Soft Down Pillow is made with 75% white duck down. It is about 2 inches thick, but the high down content means that 2 inches can turn into 8 inches if you fluff it up. It is a little on the expensive side, but it is worth it.",
-                     link: "https://amzn.to/4eUVyfQ"},
-                    {intro: "The Best Low Profile Pillow For Fans of Memory Foam",
-                      title: "BLISSBURY Stomach Sleeping Pillow - Thin Memory Foam Pillow for Stomach Sleepers",
-                      description: "There is a lot of competition in this part of the market. If you know the exact hight you want to the tenth of an inch, you can probably find it. But if you're not sure yet, Blissbury is starting to make a name for itself as a good option. This pillow is 3.3 inches thick, but you can also get an even thinner version that it only is 2.6 inches.",
-                      link: "https://amzn.to/3A4Hcuq"},
-                    {intro: "The Best Extra Thin Down Pillow",
-                      title: "DOWNLITE Down Extra Thin, Flat & Soft Pillow for Stomach Sleepers",
-                      description: "If you like what Downlite is offering, but you think a pillow that can be fluffed up to 8 inches in height just isn't going to do it for your neck, they offer an even thinner option. This pillow can fluff up to 6 inches. With your head on it, that goes down to maybe 1 inch. It is hard to measure at that end of the spectrum. This pillow is also great if you want a good new pillow to supplement your old pillow that has seen better days but is just too perfect to throw out.",
-                      link: "https://amzn.to/3A4Hcuq"},
-                    {intro: "The Best Affordable Low Profile Pillows Made From Down Alternative",
-                      title: "Acteb Ultra Thin Flat Soft Bed Pillows (2 Pack)",
-                      description: "It can be suprising hard to find low profile down alternative pillows. That's why most people end up realizing that this is what they want when someone asks them to replace the raggedy pillow they're already using. Acteb is on of the few manufacturers in this space. They're two for one deal is also quite affordable. Having two thin pillows lets you experiment with how to arrange them so that you can find the perfect, most comfortable angele for you.",
-                      link: "https://amzn.to/3A4Hcuq"},
-                      {intro: "The Best Firm Low Profile Pillow (that is also great for people who sleep hot)",
-                        title: "SUQ I OME Adjustable Slim Sleeper -Thin Flat Latex Pillow for Sleeping with 2 Removable Layers",
-                        description: "Latex is a really great material for people who can't get enough support from foam or down alternative pillows. It is more springy, but still molds to your head. This pillow is adjustable, and you can choose to make it 1, 2.5 or 3.5 inches",
-                        link: "https://amzn.to/3A4Hcuq"},
+                    {intro: "The Best Cooling Pillow if You've Tried Everything and Nothing Works",
+                      title: 'LOFE Organic Buckwheat Pillow for Sleeping - 16" x 22" - Adjustable Loft',
+                      description: "Buckwheat hull pillows can be a revelation. They are the best option if you have tried everything else and nothing has worked. Beware, they are very firm. So they are not for everyone. But if they're comfortable to you, no modern technology is going to be cooler. They just doesn't get hot in the way pretty much all other pillows will once you start sweating.  The rest of the pillows below are for people who are looking for a pillow that is more like what they are used to, but that is also cooling.",
+                      link: "https://amzn.to/48UilXj"},
+                    {intro: "The Best Cooling Pillow For People Who Like Shredded Foam Pillows",
+                      title: "Sleep On Latex - Natural Shredded Latex Pillow",
+                      description: "Latex is an amazing material. Unfortunately it's also a fairly expensive one. That's because it's actually natural. It's made from the sap of the rubber tree. It's also a very springy material, which means that it can provide a lot of support. Shredded memory foam pillows are some of the best pillows for people who need a taller, more supportive pillow than down or down alternative can provide. But, to many, memory foam feals like sleeping indside a sauna. Latex won't have this problem. These pillows are a bit more affordable than other shredded latex ones because they come in a pack of two.",
+                      link: "https://amzn.to/3YJqxow"},
+                    {intro: "The Best Cooling Pillow if You Like Solid Foam Pillows",
+                      title: "RejuveNite American Talalay Latex - Medium Support Bed Pillow",
+                      description: "We prefer shredded latex becuase non-shredded latex can be a bit too firm. But if you like firm pillows, this a gread option. It won't make you sweat like a traditional solid memory foam pillow will.",
+                      link: "https://amzn.to/3OaZNZn"},
+                    {intro: "The Best Cooling Pillow if You Like Solid Foam But Aren't a Fan of Latex",
+                      title: "Tempur-Pedic TEMPUR-Cloud Dual Cooling Pillow - Queen",
+                      description: "Not everyone likes the springiness of latex. If you're one of those people, you might have to go with a more traditional opition. Tempur-pedic has been making good, but expensive pillows for ages. Somehow, their memory foam manages to be more supportive than everyone else's. Tempur-Pedic is actually one of the few brands than has figured out how to make a cooling pillow cover that works more often than not. But it's still just a cover over a hot pillow. This pillow is a bit different. It has an internal gel layer meant to prevent the heat from building up to begin with.",
+                      link: "https://amzn.to/3YUEhNo"},
+                    {intro: "The Best Cooling Pillow At A Reasonable Price",
+                      title: "SensorPEDIC Therapedic® Polar Nights™ - 20X Cooling Standard Memory Foam Pillow",
+                      description: "Unfortunately, a lot of the pillows mentioned above have been on the pricier side. That's not true of this pillow, which relies on a proprietary cooling technology. Honestly, it's hard to take the scientific claims about these products seriously. The companies change the name of the technology every year or two. But this is a model that has been around for a little while and manages to not get to hot when you've been on it for more than a few seconds.",
+                      link: "https://amzn.to/4fvBBwN"},
+                    {intro: "An Alternative Reasonably Priced Cooling Pillow",
+                      title: "Bedsure Breescape Cooling Pillow for Sleeping - Firm",
+                      description: "If your looking for a reasonably priced cooling pillow, but the firmness of buckwheat hulls doesn't work for you and the propriety foam blends don't really help, this option with a gel layer might be the best option for you. The gel layer here won't keep you cool for ever, but it lasts much longer than cooling pillow covers.",
+                      link: "https://amzn.to/40NtpU8"},
                     ];
 
   let cardNumber = pillowList.length;
 
 
-  let textA = "It can be really hard to find a good low profile or thin pillow. Often, small differences in height can be the difference between blissful sleep and a night of tossing and turning.";
-  let textB = "We looked high - and especially - low to find a number of low profile pillows for you to choose between.";
-  let textC = "We've tried to offer a bunch of different options, from down to down alternative and from memory foam to latex";
-  let accordionText = {textA, textB, textC};
+  let textA = "There is a lot of competition in this part of the market. Every other pillow you see will say it's cooling. And if the ad text doesn't go that far, it will at least claim that the pillow is breathable. Most of the times neither of these things are true.";
+  let textB = "The majority of cooling pillows that are called cooling pillows either just have a cooling cover or they have a gel material mixed in with their  foam. Except in rare cases, the gel doesn't do anything. The cooling covers, on the other hand, aren't really cooling at all. They will feel cool for a minute or two when you touch first lay down on them. But that's more of a problem than a solution";
+  let textC = "What you can feel is the heat from your face or hand being pulled away from you and into the pillowcase. This is not nearly enough to cool your whole body; so that body part just gets hot again in a few minutes. But the heat that left you is now in the pillow, which is now hotter than even your most average non-cooling pillow. These products aren't just bad at doing what they claim to do. They actively make thinks worse, hoping to trick you. Or you might say, hoping to pull unbreathable polyester over your eyes. Forget about them, and don't look back. ";
+  let textD = "People can have different opinions about the remaining options. There are pillows with cooling gel on top so that you are protected from the part of the pillow that would draw in heat. There are pillows made up of proprietary foam blends. There are pillows made of latex, which doesn't absorb heat to the extent that memory foam does. Finally, there is an even older technology from Japan, the buckwheat pillow. Ok, it's not exactly a technology. But if you're enjoy a firm pillow, this is probably the coolest option. We've tried to offer a bunch of different options, from down to down alternative and from memory foam to latex";
+  let accordionList = [textB, textC, textD];
 
 
   return (
     <>
       <div className="divA justify-end">
         <article>
-          <div className="divB">
-            <h2 className="text-2xl font-bold mb-4 p-3 page-title">Best Cooling Pillows (for people who sleep hot)</h2>
-            <div className="divC mt-0 mb-5 p-2 pb-1 bg-indigo-200 rounded-lg border-solid border-1 border-gray-300 shadow-lg shadow-gray-600/65">
-                <ul className="text-sm text-left m-3 ml-5 font-light list-disc">
-                    <Accordion props={accordionText}/>
-                </ul>
-            </div>
+            <TopOfPage textA={textA} accordionList={accordionList}/>
             <ul className="space-y-4">
                 {pillowList.map((pillow, index) => (
                         <li key={index} className="w-full">
@@ -62,7 +61,6 @@ function Cooling() {
                         </li>
                 ))}
             </ul>
-          </div>
         </article>
       </div>
     </>

@@ -14,12 +14,14 @@ import { loader as rootLoader,
 import ErrorPage from "./error-page";
 
 import Questions from "./pages/Questions";
-import BestPillowcases from "./pages/BestPillowcases";
+import BestPillowcases from "./pages/BestPillowcases.jsx";
 import MostPopular from "./pages/MostPopular";
 import Blog from "./pages/Blog";
 import Home from "./pages/Home";
-import Thin from "./pages/Thin.jsx";
+import Thin from "./pages/thin.jsx";
 import Cooling from "./pages/Cooling.jsx";
+import MemoryFoam from "./pages/MemoryFoam.jsx";
+import ShreddedFoam from "./pages/ShreddedFoam.jsx";
 
 
 const router = createBrowserRouter([
@@ -42,10 +44,6 @@ const router = createBrowserRouter([
                 element: <Questions />,
             },
             {
-                path: "/pages/best-pillowcases",
-                element: <BestPillowcases />,
-            },
-            {
                 path: "/pages/blog",
                 element: <Blog />,
             },
@@ -56,6 +54,18 @@ const router = createBrowserRouter([
             {
                 path: "/pages/cooling",
                 element: <Cooling />,
+            },
+            {
+                path: "/pages/memory-foam",
+                element: <MemoryFoam />,
+            },
+            {
+                path: "/pages/shredded-memory-foam",
+                element: <ShreddedFoam />,
+            },
+            {
+                path: "/pages/best-pillowcases",
+                element: <BestPillowcases />,
             },
           ],
         },

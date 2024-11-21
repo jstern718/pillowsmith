@@ -1,13 +1,9 @@
-import { useState } from 'react';
-import '../App.css';
 import Pillow from '../Pillow.jsx';
-import Accordion from '../Accordion.jsx';
+import thinPillow from "../assets/small_img.jpg";
+import TopOfPage from '../components/TopOfPage.jsx';
 
-import catHeroWide from "../assets/hero4.jpeg"
-import thinPillow from "../assets/small_img.jpg"
 
 function Thin() {
-  const [count, setCount] = useState(0)
 
   let pillowList = [
                     {intro: "The Best Low Profile Pillow Out There",
@@ -37,27 +33,17 @@ function Thin() {
                         image: thinPillow},
                     ];
 
-  let cardNumber = pillowList.length;
-
-
   let textA = "It can be really hard to find a good low profile or thin pillow. Often, small differences in height can be the difference between blissful sleep and a night of tossing and turning.";
   let textB = "We looked high - and especially - low to find a number of low profile pillows for you to choose between.";
   let textC = "We've tried to offer a bunch of different options, from down to down alternative and from memory foam to latex";
-  let accordionText = {textA, textB, textC};
+  let accordionList = [textB, textC];
 
 
   return (
     <>
-      <img src={catHeroWide} alt="cat hero" className="hero-img w-full"/>
       <div className="divA justify-end">
       <article>
-          <div className="divB">
-            <h2 className="text-2xl font-bold mb-4 mt-4 p-3 page-title">The Best Thin Pillows (for stomach and side sleepers)</h2>
-            <div className="divC mt-0 mb-5 p-2 pb-1 bg-indigo-200 rounded-lg border-solid border-1 border-gray-300 shadow-lg shadow-gray-600/65">
-                <ul className="text-sm text-left m-3 ml-5 font-light list-disc">
-                    <Accordion props={accordionText}/>
-                </ul>
-            </div>
+            <TopOfPage textA={textA} accordionList={accordionList}/>
             <ul className="space-y-4">
                 {pillowList.map((pillow, index) => (
                         <li key={index} className="w-full">
@@ -72,7 +58,6 @@ function Thin() {
                         </li>
                 ))}
             </ul>
-          </div>
         </article>
       </div>
     </>

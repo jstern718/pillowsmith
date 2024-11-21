@@ -6,8 +6,7 @@ import { Outlet,
         useNavigation,
         useSubmit,
     } from "react-router-dom";
-import pillowsmithImage from "../assets/Pillowsmith.png"
-
+import CatImageMobile from "../components/CatImageMobile";
 
 import React, { useEffect, useState } from "react";
 
@@ -23,15 +22,15 @@ export default function Root() {
             "q"
         );
 
-    useEffect(() => {
-        document.getElementById("q").value = q;
-      }, [q]);
+    // useEffect(() => {
+    //     document.getElementById("q").value = q;
+    //   }, [q]);
 
     return (
       <>
         <div id="sidebar">
             <div className="form-div">
-                <Form id="search-form" role="search">
+                {/* <Form id="search-form" role="search">
                     <input
                         id="q"
                         className={searching ? "loading" : ""}
@@ -57,7 +56,8 @@ export default function Root() {
                         aria-live="polite"
                     >
                     </div>
-                </Form>
+                </Form> */}
+                <h2 className="sidebarTitle">PILLOWSMITH</h2>
             </div>
             <nav>
                 <div className="mobile-header">
@@ -69,9 +69,7 @@ export default function Root() {
                             <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
                         </div>
                     </div>
-                    <div className="image-div">
-                        <img src={pillowsmithImage} alt="pillowsmith image" className="cat-image"/>
-                    </div>
+                    <CatImageMobile />
                 </div>
 
                 <div className={isNavOpen ? "showMenuNav wide-open" : "hideMenuNav wide-open"}>
@@ -132,6 +130,48 @@ export default function Root() {
                                 }
                                 reloadDocument>
                                     Low Profile Pillows
+                                </NavLink>
+                            </li>
+                            <li key="CoolingPillows" className="hide1">
+                                <NavLink
+                                to={`pages/cooling`}
+                                className={({ isActive, isPending }) =>
+                                isActive
+                                    ? "active"
+                                    : isPending
+                                    ? "pending"
+                                    : ""
+                                }
+                                reloadDocument>
+                                    Cooling Pillows
+                                </NavLink>
+                            </li>
+                            <li key="MemoryFoam" className="hide1">
+                                <NavLink
+                                to={`pages/memory-foam`}
+                                className={({ isActive, isPending }) =>
+                                isActive
+                                    ? "active"
+                                    : isPending
+                                    ? "pending"
+                                    : ""
+                                }
+                                reloadDocument>
+                                    Memory Foam Pillows
+                                </NavLink>
+                            </li>
+                            <li key="MemoryFoam" className="hide1">
+                                <NavLink
+                                to={`pages/memory-foam`}
+                                className={({ isActive, isPending }) =>
+                                isActive
+                                    ? "active"
+                                    : isPending
+                                    ? "pending"
+                                    : ""
+                                }
+                                reloadDocument>
+                                    Shreddded Memory Foam
                                 </NavLink>
                             </li>
                             <li key="BestPillowcases" className="hide1">
